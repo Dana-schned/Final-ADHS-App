@@ -1,6 +1,7 @@
 import fsspec, posixpath
 import streamlit as st
 import pandas as pd
+from utils.data_manager import DataManager
 from utils.data_handler import DataHandler
 
 class DataManager:
