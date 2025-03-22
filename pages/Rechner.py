@@ -1,3 +1,10 @@
+# ====== Start Login Block ======
+from utils.login_manager import LoginManager
+LoginManager().go_to_login('Start.py') 
+# ====== End Login Block ======
+
+# ------------------------------------------------------------
+# Here starts the actual app, which was developed previously
 import streamlit as st
 from utils.data_manager import DataManager
 from datetime import datetime
