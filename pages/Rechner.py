@@ -12,7 +12,7 @@ with st.form(key='dilution_form'):
 
 if submit_button:
     st.write(f"Debug: C1={C1}, V1={V1}, C2={C2}")
-    DataManager().append_record(session_state_key='data_df', record_dict=result)  # save the result to the data frame
+    
     if C1 > 0 and C2 > 0:
         V2 = (C1 * V1) / C2
         st.write(f"Sie müssen {V2} ml der konzentrierten Lösung hinzufügen, um die gewünschte Konzentration zu erhalten.")

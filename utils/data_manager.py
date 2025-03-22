@@ -207,7 +207,7 @@ class DataManager:
 
         Uses the save_data() method internally for each individual key.
         """
-        keys = [key for key in st.data_reg.key() if key in self.session_state]
+        keys = [key for key in self.data_reg if key in self.session_state]
         for key in keys:
             self.save_data(key)
 
