@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.data_manager import DataManager
+from datetime import datetime
 
 st.title("Verdünnungsrechner")
 
@@ -23,12 +24,21 @@ if submit_button:
             f"Berechnetes Volumen (V2): {V2} ml"
         )
 
-        # Speichern auf SWITCHdrive
+        # Dynamischer Dateiname mit Datum & Uhrzeit
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"Verdünnungsrechner_Ergebnis_{timestamp}.txt"
+
+        # SWITCHdrive-Handler
         dm = DataManager(fs_protocol="webdav", fs_root_folder="Final ADHS App")
         handler = dm._get_data_handler()
-        handler.save("Verdünnungsrechner_Ergebnis.txt", result)
 
-        st.success("Ergebnis wurde auf SWITCHdrive gespeichert.")
+        # Versuch, Datei zu speichern
+        try:
+            handler.save(filename, result)
+            st.success("✅ Ergebnis wurde auf SWITCHdrive gespeichert.")
+        except Exception as e:
+            st.error("❌ Fehler beim Speichern auf SWITCHdrive:")
+            st.exception(e)
 
         # Download-Button
         st.download_button(
@@ -37,5 +47,6 @@ if submit_button:
             file_name="Verdünnungsrechner.txt",
             mime="text/plain"
         )
+
     else:
         st.write("Bitte geben Sie gültige Werte ein.")
