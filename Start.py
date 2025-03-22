@@ -53,4 +53,7 @@ for page in pages.keys():
 st.subheader(st.session_state.current_page)
 st.write(pages[st.session_state.current_page])
 
-
+from utils.data_manager import DataManager
+dm = DataManager(fs_protocol="webdav", fs_root_folder="Final ADHS App")
+handler = dm._get_data_handler()
+handler.save("test.txt", "Hallo SWITCHdrive!")

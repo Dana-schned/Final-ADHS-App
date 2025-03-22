@@ -2,7 +2,6 @@ import fsspec, posixpath
 import streamlit as st
 import pandas as pd
 from utils.data_handler import DataHandler
-from utils.data_manager import DataManager
 
 class DataManager:
     """
@@ -12,7 +11,6 @@ class DataManager:
     Streamlit's session state to maintain consistency across app reruns.
     Key Features:
         - Singleton implementation for consistent state management
-        - Flexible filesystem support (local and WebDAV)
         - Separate handling of application and user-specific data
         - Integration with Streamlit's session state
         - Automatic data persistence
