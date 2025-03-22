@@ -9,7 +9,7 @@ st.title("Meine erste Streamlit App")
 Diese App wurde von folgenden Personen entwickelt:
 - Dana Schnekenburger (schned06@students.zhaw.ch)
 - Katarina Djuric (djurikat@students.zhaw.ch)   
-...
+Unsere AD(H)S App ist ein Tool, das Menschen mit AD(H)S im Alltag unterstützen soll.
 """
 # Daten laden
 data_manager.load_app_data(
