@@ -5,6 +5,7 @@ LoginManager().go_to_login('Start.py')
 
 # ------------------------------------------------------------
 # Here starts the actual app, which was developed previously
+
 import streamlit as st
 from utils.data_manager import DataManager
 from datetime import datetime
@@ -57,4 +58,3 @@ if submit_button:
 
     else:
         st.write("Bitte geben Sie gültige Werte ein.")
-        
