@@ -46,7 +46,7 @@ class DataManager:
             st.session_state.data_manager = instance
             return instance
     
-    def __init__(self, fs_protocol = 'file', fs_root_folder = 'app_data'):
+    def __init__(self, fs_protocol = 'webdav', fs_root_folder = 'Final ADHS App'):
         """
         Initialize the data manager with filesystem configuration.
         Sets up the filesystem interface and initializes data registries for the application.
