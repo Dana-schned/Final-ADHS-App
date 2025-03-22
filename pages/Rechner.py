@@ -27,4 +27,4 @@ if submit_button:
     else:
         st.write("Bitte geben Sie gültige Werte ein.")
 
-
+ 
