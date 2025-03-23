@@ -40,7 +40,18 @@ if submit_button:
         dm = DataManager(fs_protocol="webdav", fs_root_folder="Final ADHS App")
         handler = dm._get_data_handler()
 
-        # Versuch, Datei zu speichern
+        # 🟡 Neue Eingabe in Session-Tabelle hinzufügen
+        new_record = {
+            "timestamp": datetime.now(),
+            "typ": "Verdünnungsrechner",
+            "C1": C1,
+            "V1": V1,
+            "C2": C2,
+            "V2": V2
+        }
+        dm.append_record("data_df", new_record)
+
+        # Versuch, Ergebnisdatei zu speichern
         try:
             handler.save(filename, result)
             st.success("✅ Ergebnis wurde auf SWITCHdrive gespeichert.")
